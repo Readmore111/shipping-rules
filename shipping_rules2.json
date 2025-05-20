@@ -239,6 +239,7 @@
   "channels": [
     "菜鸟大包标准",
     "菜鸟大包首重2KG",
+    "菜鸟无忧物流-标准",
     "邮政大包-SAL空运水陆路",
     "邮政大包-航空AIR"
   ],
@@ -2201,6 +2202,17 @@
         "additionalWeightPrice": 95.8,
         "discount": 0.68,
         "weightRequirements": "20KG",
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "Default"
+      },
+      "菜鸟无忧物流-标准": {
+        "country": "以色列",
+        "channel": "菜鸟无忧物流-标准",
+        "firstWeightPrice": 100,
+        "additionalWeightPrice": 40,
+        "weightRequirements": "30kg",
+        "sizeRequirements": "单边不超过105CM，三边长度之和不超过200CM",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -6045,6 +6057,17 @@
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
+      },
+      "菜鸟无忧物流-标准": {
+        "country": "韩国",
+        "channel": "菜鸟无忧物流-标准",
+        "firstWeightPrice": 31,
+        "additionalWeightPrice": 4,
+        "weightRequirements": "30kg",
+        "sizeRequirements": "单边长度不超过150cm，三边长度之和不超过200cm",
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "Default"
       }
     },
     "捷克": {
@@ -6074,5 +6097,5 @@
       }
     }
   },
-  "lastUpdate": "2025-05-19T02:12:24.260Z"
+  "lastUpdate": "2025-05-20T06:22:58.382Z"
 }
