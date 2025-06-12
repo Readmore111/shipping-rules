@@ -5305,8 +5305,8 @@
         "additionalWeightPrice": 65.8,
         "discount": 0.68,
         "weightRequirements": "20KG",
-        "isAvailable": true,
-        "unavailableReason": "",
+        "isAvailable": false,
+        "unavailableReason": "不通邮",
         "ruleType": "Default"
       },
       "邮政大包-SAL空运水陆路": {
@@ -5316,8 +5316,8 @@
         "additionalWeightPrice": 56.6,
         "discount": 0.68,
         "weightRequirements": "20KG",
-        "isAvailable": true,
-        "unavailableReason": "",
+        "isAvailable": false,
+        "unavailableReason": "不通邮",
         "ruleType": "Default"
       },
       "菜鸟大包首重2KG": {
@@ -5878,7 +5878,7 @@
         "additionalWeightPrice": 54.1,
         "discount": 0.68,
         "weightRequirements": "20KG",
-        "isAvailable": true,
+        "isAvailable": false,
         "unavailableReason": "",
         "ruleType": "Default"
       },
@@ -5889,8 +5889,8 @@
         "additionalWeightPrice": 50,
         "discount": 0.68,
         "weightRequirements": "20KG",
-        "isAvailable": true,
-        "unavailableReason": "",
+        "isAvailable": false,
+        "unavailableReason": "不发",
         "ruleType": "Default"
       },
       "菜鸟大包标准": {
@@ -6097,5 +6097,5 @@
       }
     }
   },
-  "lastUpdate": "2025-05-20T07:56:45.077Z"
+  "lastUpdate": "2025-06-12T10:23:20.697Z"
 }
