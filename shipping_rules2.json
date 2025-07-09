@@ -3082,7 +3082,7 @@
         "additionalWeightPrice": 147,
         "discount": 0.68,
         "weightRequirements": "31.5KG",
-        "isAvailable": TRUE,
+        "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
       },
@@ -3093,7 +3093,7 @@
         "additionalWeightPrice": 72.1,
         "discount": 0.68,
         "weightRequirements": "31.5KG",
-        "isAvailable": TRUE,
+        "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
       }
@@ -6097,5 +6097,5 @@
       }
     }
   },
-  "lastUpdate": "2025-07-09T02:57:14.727Z"
+  "lastUpdate": "2025-07-09T09:00:08.672Z"
 }
