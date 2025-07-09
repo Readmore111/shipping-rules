@@ -3082,8 +3082,8 @@
         "additionalWeightPrice": 147,
         "discount": 0.68,
         "weightRequirements": "31.5KG",
-        "isAvailable": false,
-        "unavailableReason": "不通邮",
+        "isAvailable": TRUE,
+        "unavailableReason": "",
         "ruleType": "Default"
       },
       "邮政大包-SAL空运水陆路": {
@@ -3093,8 +3093,8 @@
         "additionalWeightPrice": 72.1,
         "discount": 0.68,
         "weightRequirements": "31.5KG",
-        "isAvailable": false,
-        "unavailableReason": "不通邮",
+        "isAvailable": TRUE,
+        "unavailableReason": "",
         "ruleType": "Default"
       }
     },
