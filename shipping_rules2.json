@@ -124,7 +124,7 @@
     "文莱达鲁萨兰",
     "斐济",
     "斯威士兰",
-    "斯洛伐克",
+    "",
     "斯洛伐克共和国",
     "斯洛文尼亚",
     "斯里兰卡",
@@ -6083,9 +6083,9 @@
         "ruleType": "CainiaoLargePackage2kg"
       }
     },
-    "斯洛伐克": {
+    "斯洛伐克共和国": {
       "菜鸟大包首重2KG": {
-        "country": "斯洛伐克",
+        "country": "斯洛伐克共和国",
         "channel": "菜鸟大包首重2KG",
         "deliveryServiceFee": 37,
         "registrationServiceFee": 91,
@@ -6097,5 +6097,5 @@
       }
     }
   },
-  "lastUpdate": "2025-07-09T09:06:08.672Z"
+  "lastUpdate": "2025-07-10T09:06:08.672Z"
 }
