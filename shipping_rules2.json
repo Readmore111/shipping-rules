@@ -124,7 +124,6 @@
     "文莱达鲁萨兰",
     "斐济",
     "斯威士兰",
-    "",
     "斯洛伐克共和国",
     "斯洛文尼亚",
     "斯里兰卡",
@@ -3081,7 +3080,7 @@
         "firstWeightPrice": 235.3,
         "additionalWeightPrice": 147,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "31.5KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -3092,7 +3091,7 @@
         "firstWeightPrice": 150.4,
         "additionalWeightPrice": 72.1,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "31.5KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4783,6 +4782,17 @@
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
+      },
+      "菜鸟大包首重2KG": {
+        "country": "斯洛伐克共和国",
+        "channel": "菜鸟大包首重2KG",
+        "deliveryServiceFee": 37,
+        "registrationServiceFee": 91,
+        "weightRequirements": "20KG",
+        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "CainiaoLargePackage2kg"
       }
     },
     "西班牙": {
@@ -6082,20 +6092,7 @@
         "unavailableReason": "",
         "ruleType": "CainiaoLargePackage2kg"
       }
-    },
-    "斯洛伐克共和国": {
-      "菜鸟大包首重2KG": {
-        "country": "斯洛伐克共和国",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 37,
-        "registrationServiceFee": 91,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
-        "isAvailable": true,
-        "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
-      }
     }
   },
-  "lastUpdate": "2025-07-11T09:06:08.672Z"
+  "lastUpdate": "2025-07-11T08:59:02.169Z"
 }
