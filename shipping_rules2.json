@@ -439,7 +439,7 @@
         "firstWeightPrice": null,
         "additionalWeightPrice": null,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -450,7 +450,7 @@
         "firstWeightPrice": 82.6,
         "additionalWeightPrice": 26.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -485,7 +485,7 @@
         "firstWeightPrice": null,
         "additionalWeightPrice": null,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -496,7 +496,7 @@
         "firstWeightPrice": 83.7,
         "additionalWeightPrice": 27.8,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -735,8 +735,8 @@
         "additionalWeightPrice": 45.8,
         "discount": 0.68,
         "weightRequirements": "30KG",
-        "isAvailable": true,
-        "unavailableReason": "",
+        "isAvailable": false,
+        "unavailableReason": "不通邮",
         "ruleType": "Default"
       }
     },
@@ -889,7 +889,7 @@
         "firstWeightPrice": null,
         "additionalWeightPrice": null,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -900,7 +900,7 @@
         "firstWeightPrice": 135.1,
         "additionalWeightPrice": 53.2,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -1322,7 +1322,7 @@
         "firstWeightPrice": 144.5,
         "additionalWeightPrice": 76.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -1619,7 +1619,7 @@
         "firstWeightPrice": null,
         "additionalWeightPrice": null,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -1630,7 +1630,7 @@
         "firstWeightPrice": 172.4,
         "additionalWeightPrice": 90.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -1723,8 +1723,8 @@
         "additionalWeightPrice": 92.7,
         "discount": 0.68,
         "weightRequirements": "30KG",
-        "isAvailable": true,
-        "unavailableReason": "",
+        "isAvailable": false,
+        "unavailableReason": "不通邮",
         "ruleType": "Default"
       }
     },
@@ -2366,7 +2366,7 @@
         "firstWeightPrice": null,
         "additionalWeightPrice": null,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -2377,7 +2377,7 @@
         "firstWeightPrice": 171.1,
         "additionalWeightPrice": 101.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -3091,7 +3091,7 @@
         "firstWeightPrice": 150.4,
         "additionalWeightPrice": 72.1,
         "discount": 0.68,
-        "weightRequirements": "31.5KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -3152,7 +3152,7 @@
         "firstWeightPrice": 212.7,
         "additionalWeightPrice": 137.6,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -3163,7 +3163,7 @@
         "firstWeightPrice": 132.6,
         "additionalWeightPrice": 67.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -3222,7 +3222,7 @@
         "firstWeightPrice": 214.5,
         "additionalWeightPrice": 129.2,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -3233,7 +3233,7 @@
         "firstWeightPrice": 150.8,
         "additionalWeightPrice": 70.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -3602,8 +3602,8 @@
         "firstWeightPrice": 229,
         "additionalWeightPrice": 107.3,
         "discount": 0.68,
-        "isAvailable": true,
-        "unavailableReason": "",
+        "isAvailable": false,
+        "unavailableReason": "不通邮",
         "ruleType": "Default"
       },
       "邮政大包-SAL空运水陆路": {
@@ -3612,8 +3612,8 @@
         "firstWeightPrice": 155.7,
         "additionalWeightPrice": 48.7,
         "discount": 0.68,
-        "isAvailable": true,
-        "unavailableReason": "",
+        "isAvailable": false,
+        "unavailableReason": "不通邮",
         "ruleType": "Default"
       }
     },
@@ -4461,7 +4461,7 @@
         "firstWeightPrice": 191,
         "additionalWeightPrice": 80.1,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4472,7 +4472,7 @@
         "firstWeightPrice": 148,
         "additionalWeightPrice": 47.1,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4507,7 +4507,7 @@
         "firstWeightPrice": 159.4,
         "additionalWeightPrice": 44.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4647,7 +4647,7 @@
         "firstWeightPrice": 138,
         "additionalWeightPrice": 44.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4732,7 +4732,7 @@
         "firstWeightPrice": 162.2,
         "additionalWeightPrice": 72.4,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4743,7 +4743,7 @@
         "firstWeightPrice": 124.1,
         "additionalWeightPrice": 44.3,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4802,7 +4802,7 @@
         "firstWeightPrice": 166,
         "additionalWeightPrice": 72,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4813,7 +4813,7 @@
         "firstWeightPrice": 126.1,
         "additionalWeightPrice": 42.1,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4861,7 +4861,7 @@
         "firstWeightPrice": 161.6,
         "additionalWeightPrice": 71.2,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4872,7 +4872,7 @@
         "firstWeightPrice": 129.2,
         "additionalWeightPrice": 48.8,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4918,7 +4918,7 @@
         "firstWeightPrice": 159.3,
         "additionalWeightPrice": 71.2,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -4929,7 +4929,7 @@
         "firstWeightPrice": 121.2,
         "additionalWeightPrice": 43.1,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5141,7 +5141,7 @@
         "firstWeightPrice": 158.9,
         "additionalWeightPrice": 68.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5152,7 +5152,7 @@
         "firstWeightPrice": 122.8,
         "additionalWeightPrice": 42.4,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5279,7 +5279,7 @@
         "firstWeightPrice": 155.8,
         "additionalWeightPrice": 67.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5290,7 +5290,7 @@
         "firstWeightPrice": 120,
         "additionalWeightPrice": 41.9,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5314,7 +5314,7 @@
         "firstWeightPrice": 162.8,
         "additionalWeightPrice": 65.8,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -5325,7 +5325,7 @@
         "firstWeightPrice": 148.3,
         "additionalWeightPrice": 56.6,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -5349,7 +5349,7 @@
         "firstWeightPrice": 167.3,
         "additionalWeightPrice": 65,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5360,7 +5360,7 @@
         "firstWeightPrice": 152,
         "additionalWeightPrice": 59.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "sizeRequirements": "跟航空接近",
         "isAvailable": true,
         "unavailableReason": "",
@@ -5462,7 +5462,7 @@
         "firstWeightPrice": 123.9,
         "additionalWeightPrice": 40.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5556,7 +5556,7 @@
         "firstWeightPrice": 144.2,
         "additionalWeightPrice": 58.5,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5567,7 +5567,7 @@
         "firstWeightPrice": 119,
         "additionalWeightPrice": 43.3,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5615,7 +5615,7 @@
         "firstWeightPrice": 150.3,
         "additionalWeightPrice": 57.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5626,7 +5626,7 @@
         "firstWeightPrice": 128.2,
         "additionalWeightPrice": 45.6,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5768,7 +5768,7 @@
         "firstWeightPrice": 134.8,
         "additionalWeightPrice": 56.3,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5779,7 +5779,7 @@
         "firstWeightPrice": 121.5,
         "additionalWeightPrice": 53,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5852,7 +5852,7 @@
         "firstWeightPrice": 127.4,
         "additionalWeightPrice": 54.8,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5863,7 +5863,7 @@
         "firstWeightPrice": 114,
         "additionalWeightPrice": 51.4,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5922,7 +5922,7 @@
         "firstWeightPrice": 149.2,
         "additionalWeightPrice": 52.8,
         "discount": 1,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "sizeRequirements": "运费为全折",
         "isAvailable": true,
         "unavailableReason": "",
@@ -5934,7 +5934,7 @@
         "firstWeightPrice": 137,
         "additionalWeightPrice": 50.6,
         "discount": 1,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -5958,7 +5958,7 @@
         "firstWeightPrice": 148.7,
         "additionalWeightPrice": 52.3,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5969,7 +5969,7 @@
         "firstWeightPrice": 117.2,
         "additionalWeightPrice": 46.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5993,7 +5993,7 @@
         "firstWeightPrice": 210.2,
         "additionalWeightPrice": 51.7,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -6004,7 +6004,7 @@
         "firstWeightPrice": 182.3,
         "additionalWeightPrice": 33.8,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -6094,5 +6094,5 @@
       }
     }
   },
-  "lastUpdate": "2025-07-11T08:59:02.169Z"
+  "lastUpdate": "2025-09-16T06:15:29.894Z"
 }
