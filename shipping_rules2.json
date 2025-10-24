@@ -5756,8 +5756,9 @@
         "additionalWeightPrice": 42.4,
         "discount": 1,
         "weightRequirements": "30KG",
+        "sizeRequirements": "发省外，超围长不能出",
         "isAvailable": true,
-        "unavailableReason": "发省外，超围长不能出",
+        "unavailableReason": "",
         "ruleType": "Default"
       }
     },
@@ -6094,5 +6095,5 @@
       }
     }
   },
-  "lastUpdate": "2025-10-24T08:39:45.735Z"
+  "lastUpdate": "2025-10-24T08:41:58.897Z"
 }
