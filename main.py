@@ -203,6 +203,15 @@ if __name__ == "__main__":
         # 转为字典
         records = df.to_dict(orient="records")
         print(f"📊 解析到 {len(records)} 条数据")
+
+        # 【关键新增】处理日期格式，解决 DatetimeFieldConvFail
+        # 遍历所有数据，将 Pandas 的时间对象转换为飞书接受的毫秒时间戳
+        print("⏳ 正在转换日期格式...")
+        for r in records:
+            for k, v in r.items():
+                if isinstance(v, (pd.Timestamp, datetime)):
+                    # 转换为毫秒时间戳 (整数)
+                    r[k] = int(v.timestamp() * 1000)
         
         # 3. 写入飞书
         added_count = 0
