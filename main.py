@@ -50,11 +50,16 @@ class FeishuBot:
                 else:
                     # 打印详细错误信息帮助调试
                     print(f"⚠️ 写入失败 (Batch {i}): {resp_json}")
+                    # 如果是日志表写入失败，抛出异常以便外层捕获
+                    if table_id == LOG_TABLE_ID:
+                        raise Exception(f"飞书返回错误: {resp_json}")
             except Exception as e:
                 print(f"❌ 写入请求错误: {e}")
+                if table_id == LOG_TABLE_ID:
+                    raise e
         return total_added
 
-    def delete_oldest_day(self, table_id, date_field_name="创建时间"):
+    def delete_oldest_day(self, table_id, date_field_name="下单时间"):
         """查找并删除最早一天的数据"""
         # 1. 查找最早的记录
         url_list = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{table_id}/records"
@@ -81,6 +86,11 @@ class FeishuBot:
     def log_result(self, status, added, deleted_info, deleted_count, error=""):
         """将运行结果写入日志表"""
         beijing_time = (datetime.utcnow() + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
+        
+        # 确保 deleted_info 是字符串，防止 None 报错
+        if deleted_info is None:
+            deleted_info = "无"
+            
         fields = {
             "运行时间": beijing_time, 
             "执行状态": status,
@@ -90,10 +100,11 @@ class FeishuBot:
             "错误详情": str(error)
         }
         try:
+            print(f"📋 准备写入日志: {fields}")
             self.add_records(LOG_TABLE_ID, [fields])
             print("✅ 日志已记录")
-        except:
-            print("❌ 日志写入失败")
+        except Exception as e:
+            print(f"❌ 日志写入失败! 原因: {e}")
 
 # ================= 浏览器自动化 =================
 def download_excel_from_web():
@@ -167,9 +178,14 @@ if __name__ == "__main__":
         df = pd.read_excel(file_path, header=0, engine='xlrd') 
         df.dropna(how='all', inplace=True)
 
-        # 【核心修复 1】: 强制指定哪些列是日期，让 Pandas 尽力转换
-        # 如果你有其他日期列，也请加到这个列表里
-        date_columns = ["创建时间", "出货时间", "打印时间"]
+        # 【核心修复 0】: 字段重命名，避开系统字段冲突
+        # 将Excel里的 "创建时间" 改名为 "下单时间"
+        print("🔧 正在重命名冲突字段...")
+        df.rename(columns={'创建时间': '下单时间'}, inplace=True)
+
+        # 【核心修复 1】: 强制指定哪些列是日期
+        # 注意：这里必须使用重命名后的 "下单时间"
+        date_columns = ["下单时间", "出货时间", "打印时间"]
         
         print(f"⏳ 正在强制转换日期列: {date_columns} ...")
         for col in date_columns:
@@ -204,8 +220,9 @@ if __name__ == "__main__":
             print("⚠️ 没下载到数据，跳过上传")
         
         # 4. 清理旧数据
+        # 注意：这里使用新的字段名 "下单时间" 进行排序删除
         print("🗑️ 正在清理旧数据...")
-        del_info, del_count = bot.delete_oldest_day(DATA_TABLE_ID)
+        del_info, del_count = bot.delete_oldest_day(DATA_TABLE_ID, date_field_name="下单时间")
         
         # 5. 记录成功日志
         bot.log_result("成功", added_count, del_info, del_count)
