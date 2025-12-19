@@ -65,17 +65,21 @@ class FeishuBot:
         return total_added
 
     def delete_oldest_day(self, table_id, date_field_name="创建时间"):
-        """查找并删除最早一天(整天)的所有数据 (支持北京时间)"""
+        """查找并删除最早一天(整天)的所有数据 (Python内存过滤版 - 更精准)"""
         print(f"🔍 正在按照字段[{date_field_name}]查找最早的数据...")
         
-        # 1. 查找最早的一条记录
         url_list = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{table_id}/records"
         headers = {"Authorization": f"Bearer {self.token}"}
-        # 升序排列，取第一条，这就是"最早"的那一天
-        params_sort = {"sort": f'["{date_field_name} ASC"]', "page_size": 1}
+        
+        # 1. 既然 filter 容易有时区误差，我们直接把最早的 500 条数据全抓回来
+        # 在 Python 内存里比对日期，这样绝对不会错
+        params = {
+            "sort": f'["{date_field_name} ASC"]', 
+            "page_size": 500  # 一次抓500条来检查，通常够删一天的数据了
+        }
         
         try:
-            resp = requests.get(url_list, headers=headers, params=params_sort)
+            resp = requests.get(url_list, headers=headers, params=params)
             data = resp.json().get("data", {}).get("items", [])
         except Exception as e:
             print(f"⚠️ 无法获取旧数据: {e}")
@@ -85,55 +89,54 @@ class FeishuBot:
             print("✅ 表格是空的，无需删除。")
             return "无数据", 0
 
-        # 获取最早的时间戳 (毫秒)
-        oldest_ts = data[0]["fields"].get(date_field_name)
-        if not isinstance(oldest_ts, (int, float)):
-             print(f"⚠️ 最早的一条数据日期格式不对({oldest_ts})，跳过删除。")
+        # 2. 确定"最早的一天"是哪天
+        first_item_ts = data[0]["fields"].get(date_field_name)
+        if not isinstance(first_item_ts, (int, float)):
+             print(f"⚠️ 第一条数据日期格式不对({first_item_ts})，跳过删除。")
              return "格式错误", 0
 
-        # 【核心逻辑】动态确定最早的那一天 (北京时间)
-        utc_dt = datetime.fromtimestamp(oldest_ts / 1000, tz=timezone.utc)
-        bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8))) # 转为北京时间
+        # 转为北京时间字符串 (例如 "2025-05-14")
+        utc_dt = datetime.fromtimestamp(first_item_ts / 1000, tz=timezone.utc)
+        bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8)))
+        target_date_str = bj_dt.strftime("%Y-%m-%d")
         
-        # 确定这一天的开始和结束
-        day_start_bj = bj_dt.replace(hour=0, minute=0, second=0, microsecond=0)
-        day_end_bj = bj_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
-        
-        # 转回 UTC 时间戳用于查询
-        ts_start = int(day_start_bj.timestamp() * 1000)
-        ts_end = int(day_end_bj.timestamp() * 1000)
-        
-        date_str = day_start_bj.strftime("%Y-%m-%d")
-        print(f"🗑️ 锁定最早日期(北京时间): {date_str}，正在搜索该天所有数据...")
+        print(f"🗑️ 锁定最早日期(北京时间): {target_date_str}，正在筛选该天数据...")
 
-        # 2. 搜索该时间段内的所有数据
-        filter_str = f'AND(CurrentValue.[{date_field_name}]>={ts_start},CurrentValue.[{date_field_name}]<={ts_end})'
-        params_filter = {"filter": filter_str, "page_size": 500}
+        # 3. 在内存里循环遍历，挑出属于这一天的数据 ID
+        ids_to_delete = []
+        for item in data:
+            ts = item["fields"].get(date_field_name)
+            if isinstance(ts, (int, float)):
+                # 同样转为北京时间进行比对
+                item_utc = datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
+                item_bj = item_utc.astimezone(timezone(timedelta(hours=8)))
+                item_date_str = item_bj.strftime("%Y-%m-%d")
+                
+                # 如果日期一致，就加入删除名单
+                if item_date_str == target_date_str:
+                    ids_to_delete.append(item["record_id"])
         
-        resp_filter = requests.get(url_list, headers=headers, params=params_filter)
-        items_to_delete = resp_filter.json().get("data", {}).get("items", [])
-        
-        if not items_to_delete:
-            return f"{date_str} (未找到-可能是时区偏差)", 0
+        if not ids_to_delete:
+            print("⚠️ 奇怪，逻辑上应该有数据但没匹配到，跳过。")
+            return f"{target_date_str} (未匹配)", 0
 
-        # 3. 删除
-        record_ids = [item["record_id"] for item in items_to_delete]
-        print(f"👋 找到 {len(record_ids)} 条数据属于 {date_str}，准备删除...")
-        
+        print(f"👋 在前500条中，找到 {len(ids_to_delete)} 条属于 {target_date_str} 的数据，准备删除...")
+
+        # 4. 批量删除
         total_deleted = 0
         batch_size = 100
         url_del = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{table_id}/records/batch_delete"
         
-        for i in range(0, len(record_ids), batch_size):
-            batch_ids = record_ids[i:i+batch_size]
+        for i in range(0, len(ids_to_delete), batch_size):
+            batch_ids = ids_to_delete[i:i+batch_size]
             resp_del = requests.post(url_del, headers=headers, json={"records": batch_ids})
             if resp_del.json().get("code") == 0:
                 total_deleted += len(batch_ids)
             else:
                 print(f"⚠️ 删除失败: {resp_del.json()}")
 
-        print(f"🗑️ 已删除 {date_str} 的 {total_deleted} 条记录。")
-        return date_str, total_deleted
+        print(f"🗑️ 已删除 {target_date_str} 的 {total_deleted} 条记录。")
+        return target_date_str, total_deleted
 
     def log_result(self, status, added, deleted_info, deleted_count, error=""):
         """将运行结果写入日志表"""
