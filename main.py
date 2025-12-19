@@ -64,13 +64,14 @@ class FeishuBot:
                     raise e
         return total_added
 
-    def delete_oldest_day(self, table_id, date_field_name="下单时间"):
+    def delete_oldest_day(self, table_id, date_field_name="创建时间"):
         """查找并删除最早一天(整天)的所有数据 (支持北京时间)"""
-        print("🔍 正在检查是否有旧数据需要清理...")
+        print(f"🔍 正在按照字段[{date_field_name}]查找最早的数据...")
         
         # 1. 查找最早的一条记录
         url_list = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{table_id}/records"
         headers = {"Authorization": f"Bearer {self.token}"}
+        # 升序排列，取第一条，这就是"最早"的那一天
         params_sort = {"sort": f'["{date_field_name} ASC"]', "page_size": 1}
         
         try:
@@ -90,23 +91,22 @@ class FeishuBot:
              print(f"⚠️ 最早的一条数据日期格式不对({oldest_ts})，跳过删除。")
              return "格式错误", 0
 
-        # 【核心修复】时区转换逻辑
-        # 飞书时间戳是 UTC 毫秒，但在判断"哪一天"时，我们需要按北京时间(UTC+8)来算
+        # 【核心逻辑】动态确定最早的那一天 (北京时间)
         utc_dt = datetime.fromtimestamp(oldest_ts / 1000, tz=timezone.utc)
         bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8))) # 转为北京时间
         
-        # 获取北京时间当天的 00:00:00 和 23:59:59
+        # 确定这一天的开始和结束
         day_start_bj = bj_dt.replace(hour=0, minute=0, second=0, microsecond=0)
         day_end_bj = bj_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
         
-        # 再把这两个北京时间点，转回 UTC 时间戳 (因为飞书接口查数据要用 UTC 时间戳)
+        # 转回 UTC 时间戳用于查询
         ts_start = int(day_start_bj.timestamp() * 1000)
         ts_end = int(day_end_bj.timestamp() * 1000)
         
         date_str = day_start_bj.strftime("%Y-%m-%d")
-        print(f"🗑️ 锁定最早日期(北京时间): {date_str}，正在搜索该天数据...")
+        print(f"🗑️ 锁定最早日期(北京时间): {date_str}，正在搜索该天所有数据...")
 
-        # 2. 搜索
+        # 2. 搜索该时间段内的所有数据
         filter_str = f'AND(CurrentValue.[{date_field_name}]>={ts_start},CurrentValue.[{date_field_name}]<={ts_end})'
         params_filter = {"filter": filter_str, "page_size": 500}
         
@@ -140,11 +140,13 @@ class FeishuBot:
         if deleted_info is None:
             deleted_info = "无"
             
+        # 【重要修复】你将日志表改成了全文本列，所以这里必须把数字转为字符串 (str)
+        # 否则会报 TextFieldConvFail
         fields = {
-            "执行状态": status,
-            "新增条数": added,
-            "删除日期": str(deleted_info),
-            "删除条数": deleted_count,
+            "执行状态": str(status),
+            "新增条数": str(added),           # 修复点：转字符串
+            "删除日期": str(deleted_info),    # 修复点：转字符串
+            "删除条数": str(deleted_count),   # 修复点：转字符串
             "错误详情": str(error)
         }
         try:
@@ -227,10 +229,13 @@ if __name__ == "__main__":
         df = pd.read_excel(file_path, header=0, engine='xlrd') 
         df.dropna(how='all', inplace=True)
 
-        print("🔧 正在重命名冲突字段...")
-        df.rename(columns={'创建时间': '下单时间'}, inplace=True)
+        # 【已恢复】不再重命名为"下单时间"，直接使用原始的"创建时间"
+        # 请确保飞书里的"创建时间"列是【非系统字段】的普通日期类型
+        # print("🔧 正在重命名冲突字段...")
+        # df.rename(columns={'创建时间': '下单时间'}, inplace=True)
 
-        date_columns = ["下单时间", "出货时间", "打印时间"]
+        # 强制指定哪些列是日期
+        date_columns = ["创建时间", "出货时间", "打印时间"]
         
         print(f"⏳ 正在强制转换日期列: {date_columns} ...")
         for col in date_columns:
@@ -261,7 +266,8 @@ if __name__ == "__main__":
         
         # 4. 清理旧数据
         print("🗑️ 准备执行旧数据清理...")
-        del_info, del_count = bot.delete_oldest_day(DATA_TABLE_ID, date_field_name="下单时间")
+        # 恢复使用 "创建时间" 进行排序删除
+        del_info, del_count = bot.delete_oldest_day(DATA_TABLE_ID, date_field_name="创建时间")
         
         # 5. 记录成功日志
         bot.log_result("成功", added_count, del_info, del_count)
