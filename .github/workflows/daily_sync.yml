@@ -2,9 +2,9 @@ name: Daily Feishu Data Sync
 
 on:
   schedule:
-    # 每天北京时间早上 9 点运行 (UTC时间 1:00)
+    # 每天北京时间早上 8 点运行 (UTC时间 1:00)
     # 你可以修改 cron 表达式来调整时间
-    - cron: '28 4 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch: # 允许你在网页上有一个按钮手动点击运行测试
 
 jobs:
