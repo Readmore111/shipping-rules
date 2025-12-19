@@ -38,19 +38,24 @@ class FeishuBot:
         batch_size = 100
         total_added = 0
         
-        # 分批写入
         for i in range(0, len(records), batch_size):
             batch = records[i:i+batch_size]
             payload = {"records": [{"fields": r} for r in batch]}
             try:
                 resp = requests.post(url, headers=headers, json=payload)
                 resp_json = resp.json()
-                if resp_json.get("code") == 0:
+                code = resp_json.get("code")
+                
+                if code == 0:
                     total_added += len(batch)
                 else:
-                    # 打印详细错误信息帮助调试
-                    print(f"⚠️ 写入失败 (Batch {i}): {resp_json}")
-                    # 如果是日志表写入失败，抛出异常以便外层捕获
+                    msg = resp_json.get("msg", "")
+                    print(f"⚠️ 写入失败 (Batch {i}): Code {code} - {msg}")
+                    if code == 1254045:
+                        print("👉 原因分析：【列名不匹配】。请检查飞书表格里是否缺了某个列，或者列名写错了。")
+                    elif code == 1254302:
+                        print("👉 原因分析：【权限拒绝】。可能是试图写入'系统字段'，或者应用没发布版本。")
+                    
                     if table_id == LOG_TABLE_ID:
                         raise Exception(f"飞书返回错误: {resp_json}")
             except Exception as e:
@@ -60,39 +65,82 @@ class FeishuBot:
         return total_added
 
     def delete_oldest_day(self, table_id, date_field_name="下单时间"):
-        """查找并删除最早一天的数据"""
-        # 1. 查找最早的记录
+        """查找并删除最早一天(整天)的所有数据"""
+        print("🔍 正在检查是否有旧数据需要清理...")
+        
+        # 1. 查找最早的一条记录，确定"最早日期"
         url_list = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{table_id}/records"
         headers = {"Authorization": f"Bearer {self.token}"}
-        params = {"sort": f'["{date_field_name} ASC"]', "page_size": 100}
+        # 只取一条，用来定锚点
+        params_sort = {"sort": f'["{date_field_name} ASC"]', "page_size": 1}
         
-        resp = requests.get(url_list, headers=headers, params=params)
-        data = resp.json().get("data", {}).get("items", [])
+        try:
+            resp = requests.get(url_list, headers=headers, params=params_sort)
+            data = resp.json().get("data", {}).get("items", [])
+        except Exception as e:
+            print(f"⚠️ 无法获取旧数据(可能列名不对): {e}")
+            return "获取失败", 0
         
         if not data:
+            print("✅ 表格是空的，无需删除。")
             return "无数据", 0
 
-        oldest_date_val = data[0]["fields"].get(date_field_name, "未知日期")
-        records_to_delete = [item["record_id"] for item in data]
+        # 获取最早的时间戳
+        oldest_ts = data[0]["fields"].get(date_field_name)
+        if not isinstance(oldest_ts, (int, float)):
+             print(f"⚠️ 最早的一条数据日期格式不对({oldest_ts})，跳过删除。")
+             return "格式错误", 0
+
+        # 计算当天的 00:00:00 和 23:59:59 时间戳
+        dt = datetime.fromtimestamp(oldest_ts / 1000)
+        day_start = dt.replace(hour=0, minute=0, second=0, microsecond=0)
+        day_end = dt.replace(hour=23, minute=59, second=59, microsecond=999999)
         
-        if records_to_delete:
-            url_del = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{table_id}/records/batch_delete"
-            resp = requests.post(url_del, headers=headers, json={"records": records_to_delete})
-            if resp.json().get("code") != 0:
-                print(f"⚠️ 删除失败: {resp.json()}")
+        ts_start = int(day_start.timestamp() * 1000)
+        ts_end = int(day_end.timestamp() * 1000)
         
-        return oldest_date_val, len(records_to_delete)
+        date_str = day_start.strftime("%Y-%m-%d")
+        print(f"🗑️ 锁定最早日期: {date_str}，正在搜索该天所有数据...")
+
+        # 2. 使用 filter 搜索该时间范围内的所有数据
+        # 语法: AND(CurrentValue.[下单时间]>=ts_start, CurrentValue.[下单时间]<=ts_end)
+        filter_str = f'AND(CurrentValue.[{date_field_name}]>={ts_start},CurrentValue.[{date_field_name}]<={ts_end})'
+        
+        # 设置 page_size 为 500 (飞书单次查询上限)，如果不止500条可能需要循环，但对于一天的数据通常够了
+        params_filter = {"filter": filter_str, "page_size": 500}
+        
+        resp_filter = requests.get(url_list, headers=headers, params=params_filter)
+        items_to_delete = resp_filter.json().get("data", {}).get("items", [])
+        
+        if not items_to_delete:
+            return f"{date_str} (未找到)", 0
+
+        # 3. 批量删除
+        record_ids = [item["record_id"] for item in items_to_delete]
+        print(f"👋 找到 {len(record_ids)} 条数据属于 {date_str}，准备全部删除...")
+        
+        total_deleted = 0
+        batch_size = 100
+        url_del = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{table_id}/records/batch_delete"
+        
+        # 分批删除 (每次100条)
+        for i in range(0, len(record_ids), batch_size):
+            batch_ids = record_ids[i:i+batch_size]
+            resp_del = requests.post(url_del, headers=headers, json={"records": batch_ids})
+            if resp_del.json().get("code") == 0:
+                total_deleted += len(batch_ids)
+            else:
+                print(f"⚠️ 删除失败: {resp_del.json()}")
+
+        print(f"🗑️ 已删除 {date_str} 的 {total_deleted} 条记录。")
+        return date_str, total_deleted
 
     def log_result(self, status, added, deleted_info, deleted_count, error=""):
         """将运行结果写入日志表"""
-        beijing_time = (datetime.utcnow() + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
-        
-        # 确保 deleted_info 是字符串，防止 None 报错
         if deleted_info is None:
             deleted_info = "无"
             
         fields = {
-            "运行时间": beijing_time, 
             "执行状态": status,
             "新增条数": added,
             "删除日期": str(deleted_info),
@@ -178,38 +226,29 @@ if __name__ == "__main__":
         df = pd.read_excel(file_path, header=0, engine='xlrd') 
         df.dropna(how='all', inplace=True)
 
-        # 【核心修复 0】: 字段重命名，避开系统字段冲突
-        # 将Excel里的 "创建时间" 改名为 "下单时间"
         print("🔧 正在重命名冲突字段...")
         df.rename(columns={'创建时间': '下单时间'}, inplace=True)
 
-        # 【核心修复 1】: 强制指定哪些列是日期
-        # 注意：这里必须使用重命名后的 "下单时间"
         date_columns = ["下单时间", "出货时间", "打印时间"]
         
         print(f"⏳ 正在强制转换日期列: {date_columns} ...")
         for col in date_columns:
             if col in df.columns:
-                # errors='coerce' 意思是：如果遇到转不了的乱码，就设为 NaT (空时间)
                 df[col] = pd.to_datetime(df[col], errors='coerce')
 
         records = df.to_dict(orient="records")
         print(f"📊 解析到 {len(records)} 条数据")
 
-        # 【核心修复 2】: 再次清洗，将所有 Pandas 时间对象转为飞书时间戳，处理空值
         for r in records:
             for k, v in r.items():
-                # 先处理空值 (NaN, NaT, None) -> 设为 None
                 if pd.isna(v):
                     r[k] = None
                     continue
-                
-                # 再处理时间戳
                 if isinstance(v, (pd.Timestamp, datetime)):
                     try:
                         r[k] = int(v.timestamp() * 1000)
                     except:
-                        r[k] = None # 如果时间错乱，设为空，保命要紧
+                        r[k] = None
 
         # 3. 写入飞书
         added_count = 0
@@ -219,9 +258,9 @@ if __name__ == "__main__":
         else:
             print("⚠️ 没下载到数据，跳过上传")
         
-        # 4. 清理旧数据
-        # 注意：这里使用新的字段名 "下单时间" 进行排序删除
-        print("🗑️ 正在清理旧数据...")
+        # 4. 清理旧数据 (这里已重新开启)
+        print("🗑️ 准备执行旧数据清理...")
+        # 即使没上传新数据，也会检查并清理最老的一天，保持数据量平衡
         del_info, del_count = bot.delete_oldest_day(DATA_TABLE_ID, date_field_name="下单时间")
         
         # 5. 记录成功日志
