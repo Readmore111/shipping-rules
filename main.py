@@ -142,10 +142,14 @@ class FeishuBot:
         """将运行结果写入日志表"""
         if deleted_info is None:
             deleted_info = "无"
-            
+        
+        # 计算北京时间
+        beijing_time = (datetime.utcnow() + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
+
         # 【重要修复】你将日志表改成了全文本列，所以这里必须把数字转为字符串 (str)
         # 否则会报 TextFieldConvFail
         fields = {
+            "运行时间": beijing_time,         # 新增：恢复写入时间
             "执行状态": str(status),
             "新增条数": str(added),           # 修复点：转字符串
             "删除日期": str(deleted_info),    # 修复点：转字符串
