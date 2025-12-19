@@ -141,11 +141,14 @@ def download_excel_from_web():
             page.click('input[value="登 录"]')
             
             # 等待"全部订单/导出"文字出现，确保登录成功
-            page.wait_for_selector('text=全部订单/导出', timeout=15000)
+            # 修改：增加超时时间到60秒，并强制匹配可见元素 (visible=true)，防止匹配到隐藏的移动端菜单
+            print("⏳ 等待页面跳转...")
+            menu_selector = 'text=全部订单/导出 >> visible=true'
+            page.wait_for_selector(menu_selector, timeout=60000)
             
             # 3. 导航到导出页面
             print("📂 进入导出页面...")
-            page.click('text=全部订单/导出') 
+            page.click(menu_selector) 
             
             # 4. 强制填入日期 (使用 JS 移除 readonly 属性并赋值)
             print("📅 正在设置日期...")
