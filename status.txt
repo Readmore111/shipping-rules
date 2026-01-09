@@ -1,1 +1,1 @@
-ALLOW
+DENY
