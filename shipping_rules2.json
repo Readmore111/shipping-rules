@@ -236,6 +236,7 @@
     "黑山"
   ],
   "channels": [
+    "法国航空大包",
     "菜鸟大包标准",
     "菜鸟大包首重2KG",
     "菜鸟无忧物流-标准",
@@ -841,7 +842,7 @@
         "firstWeightPrice": null,
         "additionalWeightPrice": null,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": false,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
@@ -852,7 +853,7 @@
         "firstWeightPrice": 124.9,
         "additionalWeightPrice": 51.1,
         "discount": 0.68,
-        "weightRequirements": "20KG",
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5205,6 +5206,17 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
+      "法国航空大包": {
+        "country": "法国",
+        "channel": "法国航空大包",
+        "firstWeightPrice": 185.3,
+        "additionalWeightPrice": 68.3,
+        "discount": 0.6,
+        "weightRequirements": "30KG",
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "Default"
+      },
       "邮政大包-SAL空运水陆路": {
         "country": "法国",
         "channel": "邮政大包-SAL空运水陆路",
@@ -6095,5 +6107,5 @@
       }
     }
   },
-  "lastUpdate": "2025-10-24T08:41:58.897Z"
+  "lastUpdate": "2026-02-04T01:03:51.282Z"
 }
