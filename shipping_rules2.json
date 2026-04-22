@@ -236,6 +236,7 @@
     "黑山"
   ],
   "channels": [
+    "俄罗斯E包裹",
     "法国航空大包",
     "菜鸟大包标准",
     "菜鸟大包首重2KG",
@@ -5534,8 +5535,8 @@
         "additionalWeightPrice": 59.3,
         "discount": 0.68,
         "weightRequirements": "30KG",
-        "isAvailable": false,
-        "unavailableReason": "不发",
+        "isAvailable": true,
+        "unavailableReason": "",
         "ruleType": "Default"
       },
       "邮政大包-SAL空运水陆路": {
@@ -5545,8 +5546,20 @@
         "additionalWeightPrice": 44,
         "discount": 0.68,
         "weightRequirements": "30KG",
-        "isAvailable": false,
-        "unavailableReason": "不发",
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "Default"
+      },
+      "俄罗斯E包裹": {
+        "country": "俄罗斯",
+        "channel": "俄罗斯E包裹",
+        "firstWeightPrice": 70,
+        "additionalWeightPrice": 20,
+        "discount": 0.8,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "围长不超360CM",
+        "isAvailable": true,
+        "unavailableReason": "",
         "ruleType": "Default"
       },
       "菜鸟大包标准": {
@@ -5554,8 +5567,8 @@
         "channel": "菜鸟大包标准",
         "deliveryServiceFee": 38,
         "registrationServiceFee": 30,
-        "weightRequirements": "31KG",
-        "sizeRequirements": "不超过30KG，三边长之和<330 cm，单边长<180 cm",
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边长之和<200 cm，单边长<105 cm",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "CainiaoLargePackage"
@@ -6107,5 +6120,5 @@
       }
     }
   },
-  "lastUpdate": "2026-02-04T01:03:51.282Z"
+  "lastUpdate": "2026-04-22T10:53:31.233Z"
 }
