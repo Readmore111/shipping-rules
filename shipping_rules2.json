@@ -5546,6 +5546,7 @@
         "additionalWeightPrice": 44,
         "discount": 0.68,
         "weightRequirements": "30KG",
+        "sizeRequirements": "做全折的能出380CM，最长边180cm内",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5554,10 +5555,10 @@
         "country": "俄罗斯",
         "channel": "俄罗斯E包裹",
         "firstWeightPrice": 70,
-        "additionalWeightPrice": 20,
+        "additionalWeightPrice": 40,
         "discount": 0.8,
         "weightRequirements": "30KG",
-        "sizeRequirements": "围长不超360CM",
+        "sizeRequirements": "最长边不超150m，围长不超360CM",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -6120,5 +6121,5 @@
       }
     }
   },
-  "lastUpdate": "2026-04-22T10:53:31.233Z"
+  "lastUpdate": "2026-04-22T10:59:30.372Z"
 }
