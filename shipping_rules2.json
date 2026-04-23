@@ -5555,7 +5555,7 @@
         "country": "俄罗斯",
         "channel": "俄罗斯E包裹",
         "firstWeightPrice": 70,
-        "additionalWeightPrice": 40,
+        "additionalWeightPrice": 20,
         "discount": 0.8,
         "firstWeightUnit": 0.5,
         "additionalWeightUnit": 0.5,
@@ -6124,5 +6124,5 @@
       }
     }
   },
-  "lastUpdate": "2026-04-23T02:36:30.007Z"
+  "lastUpdate": "2026-04-23T02:38:51.944Z"
 }
