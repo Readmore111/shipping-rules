@@ -5557,6 +5557,9 @@
         "firstWeightPrice": 70,
         "additionalWeightPrice": 40,
         "discount": 0.8,
+        "firstWeightUnit": 0.5,
+        "additionalWeightUnit": 0.5,
+        "fixedFee": 0,
         "weightRequirements": "30KG",
         "sizeRequirements": "最长边不超150m，围长不超360CM",
         "isAvailable": true,
@@ -6121,5 +6124,5 @@
       }
     }
   },
-  "lastUpdate": "2026-04-22T10:59:30.372Z"
+  "lastUpdate": "2026-04-23T02:36:30.007Z"
 }
