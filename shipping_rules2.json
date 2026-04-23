@@ -4946,6 +4946,7 @@
         "additionalWeightPrice": 71.2,
         "discount": 0.6,
         "fixedFee": 18,
+        "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5097,6 +5098,7 @@
         "additionalWeightPrice": 15,
         "discount": 0.8,
         "fixedFee": 8,
+        "weightRequirements": "20KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5871,6 +5873,7 @@
         "additionalWeightPrice": 56.1,
         "discount": 0.6,
         "fixedFee": 18,
+        "weightRequirements": "20KG",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -6161,5 +6164,5 @@
       }
     }
   },
-  "lastUpdate": "2026-04-23T02:55:14.332Z"
+  "lastUpdate": "2026-04-23T02:58:26.645Z"
 }
