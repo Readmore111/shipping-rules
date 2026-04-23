@@ -237,7 +237,10 @@
   ],
   "channels": [
     "俄罗斯E包裹",
+    "意大利航空AIR",
+    "水陆路SURFACE",
     "法国航空大包",
+    "波兰航空AIR",
     "菜鸟大包标准",
     "菜鸟大包首重2KG",
     "菜鸟无忧物流-标准",
@@ -4936,6 +4939,17 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
+      "意大利航空AIR": {
+        "country": "意大利",
+        "channel": "意大利航空AIR",
+        "firstWeightPrice": 159.3,
+        "additionalWeightPrice": 71.2,
+        "discount": 0.6,
+        "fixedFee": 18,
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "Default"
+      },
       "菜鸟大包首重2KG": {
         "country": "意大利",
         "channel": "菜鸟大包首重2KG",
@@ -5072,6 +5086,17 @@
         "discount": 0.68,
         "weightRequirements": "20KG",
         "sizeRequirements": "单边不超105",
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "Default"
+      },
+      "水陆路SURFACE": {
+        "country": "澳大利亚",
+        "channel": "水陆路SURFACE",
+        "firstWeightPrice": 88.8,
+        "additionalWeightPrice": 15,
+        "discount": 0.8,
+        "fixedFee": 8,
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -5213,6 +5238,7 @@
         "firstWeightPrice": 185.3,
         "additionalWeightPrice": 68.3,
         "discount": 0.6,
+        "fixedFee": 18,
         "weightRequirements": "30KG",
         "isAvailable": true,
         "unavailableReason": "",
@@ -5838,6 +5864,17 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
+      "波兰航空AIR": {
+        "country": "波兰",
+        "channel": "波兰航空AIR",
+        "firstWeightPrice": 139.4,
+        "additionalWeightPrice": 56.1,
+        "discount": 0.6,
+        "fixedFee": 18,
+        "isAvailable": true,
+        "unavailableReason": "",
+        "ruleType": "Default"
+      },
       "菜鸟大包首重2KG": {
         "country": "波兰",
         "channel": "菜鸟大包首重2KG",
@@ -6124,5 +6161,5 @@
       }
     }
   },
-  "lastUpdate": "2026-04-23T02:38:51.944Z"
+  "lastUpdate": "2026-04-23T02:55:14.332Z"
 }
