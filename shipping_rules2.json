@@ -5589,7 +5589,7 @@
         "additionalWeightUnit": 0.5,
         "fixedFee": 0,
         "weightRequirements": "30KG",
-        "sizeRequirements": "最长边不超150m，围长不超360CM",
+        "sizeRequirements": "单边尺寸限制150cm米以内。周长300CM-310CM附加费+20.周长310CM-330CM附加费+50,周长330CM-360CM附加费+80",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
@@ -6164,5 +6164,5 @@
       }
     }
   },
-  "lastUpdate": "2026-04-23T02:58:26.645Z"
+  "lastUpdate": "2026-04-23T03:36:15.921Z"
 }
