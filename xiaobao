@@ -1,5 +1,5 @@
 {
-  "version": "2026-04-26 14:12:21",
+  "version": "2026-04-26 15:14:33",
   "channels": {
     "无忧物流-标准-普货": {
       "阿尔巴尼亚": {
@@ -7403,6 +7403,54 @@
             "max": 2.0,
             "delivery": 199.1,
             "register": 16.4
+          }
+        ]
+      }
+    },
+    "AE云途全球专线挂号（特惠普货）": {
+      "美国": {
+        "小包普货": [
+          {
+            "min": 0.0,
+            "max": 0.1,
+            "delivery": 129.0,
+            "register": 23.0
+          },
+          {
+            "min": 0.1,
+            "max": 0.2,
+            "delivery": 124.0,
+            "register": 21.0
+          },
+          {
+            "min": 0.2,
+            "max": 0.3,
+            "delivery": 122.0,
+            "register": 19.0
+          },
+          {
+            "min": 0.3,
+            "max": 0.45,
+            "delivery": 121.0,
+            "register": 19.0
+          },
+          {
+            "min": 0.45,
+            "max": 0.7,
+            "delivery": 120.0,
+            "register": 19.0
+          },
+          {
+            "min": 0.7,
+            "max": 2.0,
+            "delivery": 119.0,
+            "register": 12.0
+          },
+          {
+            "min": 2.0,
+            "max": 30.0,
+            "delivery": 114.0,
+            "register": 12.0
           }
         ]
       }
