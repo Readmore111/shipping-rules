@@ -3607,7 +3607,7 @@
         "firstWeightPrice": 229,
         "additionalWeightPrice": 107.3,
         "discount": 0.68,
-        "isAvailable": false,
+        "isAvailable": true,
         "unavailableReason": "不通邮",
         "ruleType": "Default"
       },
@@ -4347,8 +4347,8 @@
         "additionalWeightPrice": 83.4,
         "discount": 0.68,
         "weightRequirements": "30KG",
-        "isAvailable": false,
-        "unavailableReason": "不通邮",
+        "isAvailable": true,
+        "unavailableReason": "",
         "ruleType": "Default"
       },
       "邮政大包-SAL空运水陆路": {
@@ -6164,5 +6164,5 @@
       }
     }
   },
-  "lastUpdate": "2026-08-17T01:26:42.129Z"
+  "lastUpdate": "2026-08-17T01:35:12.568Z"
 }
