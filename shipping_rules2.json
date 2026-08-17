@@ -4944,7 +4944,7 @@
         "channel": "意大利航空AIR",
         "firstWeightPrice": 159.3,
         "additionalWeightPrice": 71.2,
-        "discount": 0.6,
+        "discount": 0.68,
         "fixedFee": 18,
         "weightRequirements": "30KG",
         "isAvailable": true,
@@ -5239,7 +5239,7 @@
         "channel": "法国航空大包",
         "firstWeightPrice": 185.3,
         "additionalWeightPrice": 68.3,
-        "discount": 0.6,
+        "discount": 0.68,
         "fixedFee": 18,
         "weightRequirements": "30KG",
         "isAvailable": true,
@@ -5871,7 +5871,7 @@
         "channel": "波兰航空AIR",
         "firstWeightPrice": 139.4,
         "additionalWeightPrice": 56.1,
-        "discount": 0.6,
+        "discount": 0.68,
         "fixedFee": 18,
         "weightRequirements": "20KG",
         "isAvailable": true,
@@ -6164,5 +6164,5 @@
       }
     }
   },
-  "lastUpdate": "2026-04-23T03:36:15.921Z"
+  "lastUpdate": "2026-08-17T01:26:42.129Z"
 }
