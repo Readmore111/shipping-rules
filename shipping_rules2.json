@@ -4659,7 +4659,7 @@
         "ruleType": "CainiaoLargePackageTiered",
         "billingUnitKg": 0.1,
         "weightRequirements": "30KG",
-        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "sizeRequirements": "不超过30KG，单边长 < 120cm，三边之和 < 245cm",
         "note": "",
         "isAvailable": true,
         "unavailableReason": "",
