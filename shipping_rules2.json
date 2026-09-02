@@ -238,11 +238,10 @@
   "channels": [
     "俄罗斯E包裹",
     "意大利航空AIR",
+    "无忧物流-陆运大件专线",
     "水陆路SURFACE",
     "法国航空大包",
     "波兰航空AIR",
-    "菜鸟大包标准",
-    "菜鸟大包首重2KG",
     "菜鸟无忧物流-标准",
     "邮政大包-SAL空运水陆路",
     "邮政大包-航空AIR"
@@ -4482,16 +4481,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "葡萄牙",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 52,
-        "registrationServiceFee": 93,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 52,
+            "registrationServiceFee": 93
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 37.94,
+            "registrationServiceFee": 114.77
+          }
+        ]
       }
     },
     "芬兰": {
@@ -4517,16 +4532,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "芬兰",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 45,
-        "registrationServiceFee": 108,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 45,
+            "registrationServiceFee": 108
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 36.79,
+            "registrationServiceFee": 133.48
+          }
+        ]
       }
     },
     "直布罗陀": {
@@ -4622,16 +4653,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "英国",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 46,
-        "registrationServiceFee": 92,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 46,
+            "registrationServiceFee": 92
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 28.37,
+            "registrationServiceFee": 45.63
+          }
+        ]
       }
     },
     "挪威": {
@@ -4753,16 +4800,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "爱尔兰",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 44,
-        "registrationServiceFee": 90,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 44,
+            "registrationServiceFee": 90
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 44.51,
+            "registrationServiceFee": 109.68
+          }
+        ]
       }
     },
     "斯洛伐克共和国": {
@@ -4788,16 +4851,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "斯洛伐克共和国",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 37,
-        "registrationServiceFee": 91,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 37,
+            "registrationServiceFee": 91
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 38.95,
+            "registrationServiceFee": 115.22
+          }
+        ]
       }
     },
     "西班牙": {
@@ -4823,16 +4902,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "西班牙",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 35,
-        "registrationServiceFee": 101,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "西班牙本土：重量不超过30KG，三边之和＜300 cm，单边长＜150 cm；西班牙外岛（邮编35、38、51、52开头）：重量不超过30KG，三边之和＜210 cm，单边长＜120 cm",
+        "note": "西班牙外岛邮编为35、38、51、52开头；当前插件未采集邮编，请按目的地人工确认尺寸限制。",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 35,
+            "registrationServiceFee": 101
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 35.81,
+            "registrationServiceFee": 113.51
+          }
+        ]
       }
     },
     "捷克共和国": {
@@ -4882,16 +4977,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "斯洛文尼亚",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 55,
-        "registrationServiceFee": 86,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 55,
+            "registrationServiceFee": 86
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 47.81,
+            "registrationServiceFee": 95.38
+          }
+        ]
       }
     },
     "圣马力诺": {
@@ -4951,16 +5062,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "意大利",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 33,
-        "registrationServiceFee": 104,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 33,
+            "registrationServiceFee": 104
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 29.68,
+            "registrationServiceFee": 93.28
+          }
+        ]
       }
     },
     "丹麦": {
@@ -4986,16 +5113,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "丹麦",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 41,
-        "registrationServiceFee": 77,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 41,
+            "registrationServiceFee": 77
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 37.19,
+            "registrationServiceFee": 114.95
+          }
+        ]
       }
     },
     "法罗群岛": {
@@ -5127,16 +5270,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "德国",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 51,
-        "registrationServiceFee": 68,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 51,
+            "registrationServiceFee": 68
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 30.3,
+            "registrationServiceFee": 83.14
+          }
+        ]
       }
     },
     "瑞士": {
@@ -5186,16 +5345,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "荷兰",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 48,
-        "registrationServiceFee": 59,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 48,
+            "registrationServiceFee": 59
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 27.05,
+            "registrationServiceFee": 117.51
+          }
+        ]
       }
     },
     "列支敦士登": {
@@ -5257,16 +5432,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "法国",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 45,
-        "registrationServiceFee": 96,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 45,
+            "registrationServiceFee": 96
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 30.26,
+            "registrationServiceFee": 113.07
+          }
+        ]
       }
     },
     "安道尔": {
@@ -5336,16 +5527,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "卢森堡",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 47,
-        "registrationServiceFee": 75,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 47,
+            "registrationServiceFee": 75
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 34.9,
+            "registrationServiceFee": 85.75
+          }
+        ]
       }
     },
     "马耳他": {
@@ -5371,16 +5578,32 @@
         "unavailableReason": "不通邮",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "马耳他",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 58,
-        "registrationServiceFee": 121.2,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 58,
+            "registrationServiceFee": 121.2
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 59.4,
+            "registrationServiceFee": 144.72
+          }
+        ]
       }
     },
     "阿塞拜疆": {
@@ -5508,16 +5731,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "奥地利",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 40,
-        "registrationServiceFee": 82,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 40,
+            "registrationServiceFee": 82
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 37.6,
+            "registrationServiceFee": 93.53
+          }
+        ]
       }
     },
     "希腊": {
@@ -5543,16 +5782,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "希腊",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 40,
-        "registrationServiceFee": 131,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 40,
+            "registrationServiceFee": 131
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 48.9,
+            "registrationServiceFee": 138.51
+          }
+        ]
       }
     },
     "俄罗斯": {
@@ -5594,16 +5849,25 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包标准": {
+      "无忧物流-陆运大件专线": {
         "country": "俄罗斯",
-        "channel": "菜鸟大包标准",
-        "deliveryServiceFee": 38,
-        "registrationServiceFee": 30,
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
         "weightRequirements": "30KG",
         "sizeRequirements": "不超过30KG，三边长之和<200 cm，单边长<105 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 38,
+            "registrationServiceFee": 30
+          }
+        ]
       }
     },
     "保加利亚": {
@@ -5629,16 +5893,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "保加利亚",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 50,
-        "registrationServiceFee": 72,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 50,
+            "registrationServiceFee": 72
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 41.49,
+            "registrationServiceFee": 94.3
+          }
+        ]
       }
     },
     "阿尔巴尼亚": {
@@ -5688,16 +5968,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "罗马尼亚",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 41,
-        "registrationServiceFee": 87,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 41,
+            "registrationServiceFee": 120.52
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 40.76,
+            "registrationServiceFee": 134.03
+          }
+        ]
       }
     },
     "瑞典": {
@@ -5723,16 +6019,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "瑞典",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 55,
-        "registrationServiceFee": 96,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 55,
+            "registrationServiceFee": 96
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 41.86,
+            "registrationServiceFee": 109.21
+          }
+        ]
       }
     },
     "匈牙利": {
@@ -5758,16 +6070,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "匈牙利",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 45,
-        "registrationServiceFee": 76,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 45,
+            "registrationServiceFee": 76
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 44.6,
+            "registrationServiceFee": 99.99
+          }
+        ]
       }
     },
     "黑山": {
@@ -5878,16 +6206,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "波兰",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 47,
-        "registrationServiceFee": 85,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 47,
+            "registrationServiceFee": 85
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 28.14,
+            "registrationServiceFee": 40.2
+          }
+        ]
       }
     },
     "黎巴嫩": {
@@ -5938,16 +6282,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "拉脱维亚",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 47,
-        "registrationServiceFee": 86,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 47,
+            "registrationServiceFee": 86
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 40.58,
+            "registrationServiceFee": 95.38
+          }
+        ]
       }
     },
     "乌克兰": {
@@ -5973,16 +6333,25 @@
         "unavailableReason": "不发",
         "ruleType": "Default"
       },
-      "菜鸟大包标准": {
+      "无忧物流-陆运大件专线": {
         "country": "乌克兰",
-        "channel": "菜鸟大包标准",
-        "deliveryServiceFee": 37,
-        "registrationServiceFee": 64,
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
         "weightRequirements": "20KG",
         "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 37,
+            "registrationServiceFee": 64
+          }
+        ]
       }
     },
     "爱沙尼亚": {
@@ -6009,16 +6378,32 @@
         "unavailableReason": "不通邮",
         "ruleType": "Default"
       },
-      "菜鸟大包标准": {
+      "无忧物流-陆运大件专线": {
         "country": "爱沙尼亚",
-        "channel": "菜鸟大包标准",
-        "deliveryServiceFee": 50,
-        "registrationServiceFee": 60,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 50,
+            "registrationServiceFee": 60
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 39.97,
+            "registrationServiceFee": 96.8
+          }
+        ]
       }
     },
     "立陶宛": {
@@ -6044,16 +6429,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "立陶宛",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 48,
-        "registrationServiceFee": 90,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 48,
+            "registrationServiceFee": 90
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 40.59,
+            "registrationServiceFee": 102.54
+          }
+        ]
       }
     },
     "比利时": {
@@ -6079,16 +6480,32 @@
         "unavailableReason": "",
         "ruleType": "Default"
       },
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "比利时",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 55,
-        "registrationServiceFee": 76,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 55,
+            "registrationServiceFee": 76
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 26.99,
+            "registrationServiceFee": 104.81
+          }
+        ]
       }
     },
     "日本": {
@@ -6151,18 +6568,34 @@
       }
     },
     "捷克": {
-      "菜鸟大包首重2KG": {
+      "无忧物流-陆运大件专线": {
         "country": "捷克",
-        "channel": "菜鸟大包首重2KG",
-        "deliveryServiceFee": 41,
-        "registrationServiceFee": 81,
-        "weightRequirements": "20KG",
-        "sizeRequirements": "不超过20KG，三边之和＜300 cm，单边长＜150 cm",
+        "channel": "无忧物流-陆运大件专线",
+        "ruleType": "CainiaoLargePackageTiered",
+        "billingUnitKg": 0.1,
+        "weightRequirements": "30KG",
+        "sizeRequirements": "不超过30KG，三边之和＜300 cm，单边长＜150 cm",
+        "note": "",
         "isAvailable": true,
         "unavailableReason": "",
-        "ruleType": "CainiaoLargePackage2kg"
+        "tiers": [
+          {
+            "minWeight": 0,
+            "maxWeight": 20,
+            "minChargeableWeight": 2,
+            "deliveryServiceFee": 41,
+            "registrationServiceFee": 81
+          },
+          {
+            "minWeight": 20,
+            "maxWeight": 30,
+            "minChargeableWeight": 0,
+            "deliveryServiceFee": 31.32,
+            "registrationServiceFee": 91.9
+          }
+        ]
       }
     }
   },
-  "lastUpdate": "2026-08-17T01:35:12.568Z"
+  "lastUpdate": "2026-09-02T00:00:00+08:00"
 }
