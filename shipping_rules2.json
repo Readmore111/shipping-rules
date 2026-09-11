@@ -1025,6 +1025,7 @@
         "additionalWeightPrice": 64.6,
         "discount": 0.68,
         "weightRequirements": "30KG",
+        "sizeRequirements": "单边尺寸限制1.05米，周长限制2.05米",
         "isAvailable": true,
         "unavailableReason": "",
         "ruleType": "Default"
