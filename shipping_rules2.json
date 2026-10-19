@@ -905,7 +905,7 @@
         "additionalWeightPrice": 53.2,
         "discount": 0.68,
         "weightRequirements": "30KG",
-        "isAvailable": true,
+        "isAvailable": false,
         "unavailableReason": "",
         "ruleType": "Default"
       }
