@@ -5985,14 +5985,14 @@
             "maxWeight": 20,
             "minChargeableWeight": 2,
             "deliveryServiceFee": 41,
-            "registrationServiceFee": 120.52
+            "registrationServiceFee": 88.86
           },
           {
             "minWeight": 20,
             "maxWeight": 30,
             "minChargeableWeight": 0,
             "deliveryServiceFee": 40.76,
-            "registrationServiceFee": 134.03
+            "registrationServiceFee": 102.37
           }
         ]
       }
